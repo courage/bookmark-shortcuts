@@ -46,3 +46,28 @@ function createTabsForBookmarkNodes(nodes) {
       createTabsForBookmarkNodes(node.children);
   });
 }
+
+window.getAllBookmarks = function(callback) {
+  var commandToDescriptor = {}
+
+  chrome.commands.getAll(function(commands) {
+    var completionCount = 0;
+    function completeOneCommand() {
+      completionCount++;
+      if (completionCount >= commands.length)
+        callback(commandToDescriptor);
+    }
+
+    commands.forEach(function(command) {
+      commandToDescriptor[command.name] = {};
+      if (command.shortcut) {
+        shortcutToBookmarkNodes(command.shortcut, function (nodes) {
+          commandToDescriptor[command.name][command.shortcut] = nodes;
+          completeOneCommand();
+        });
+      } else {
+        completeOneCommand();
+      }
+    });
+  });
+}
