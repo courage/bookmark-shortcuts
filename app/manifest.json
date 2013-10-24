@@ -10,10 +10,14 @@
     "launch_bookmark_1": { "description": "launch bookmark 1", "suggested_key": { "default": "Alt+1" } },
     "launch_bookmark_2": { "description": "launch bookmark 2", "suggested_key": { "default": "Alt+2" } },
     "launch_bookmark_3": { "description": "launch bookmark 3", "suggested_key": { "default": "Alt+3" } },
-    "launch_bookmark_4": { "description": "launch bookmark 4", "suggested_key": { "default": "Alt+4" } },
+    "launch_bookmark_4": { "description": "launch bookmark 4" },
     "launch_bookmark_5": { "description": "launch bookmark 5" },
     "launch_bookmark_6": { "description": "launch bookmark 6" },
-    "launch_bookmark_7": { "description": "launch bookmark 7" }
+    "launch_bookmark_7": { "description": "launch bookmark 7" },
+    "launch_options": {
+      "description": "open the Launchafilter options page",
+      "suggested_key": { "default": "Alt+0" }
+    }
   },
 
   "background": {

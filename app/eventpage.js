@@ -3,6 +3,13 @@
 console.log('hello');
 
 chrome.commands.onCommand.addListener(function(command) {
+  if (command == 'launch_options') {
+    chrome.tabs.create({
+      url: chrome.runtime.getURL('options.html')
+    });
+    return;
+  }
+
   commandToShortcut(command, function(shortcut) {
     console.log('Command:', command, shortcut);
     if (shortcut) {
@@ -17,8 +24,16 @@ chrome.commands.getAll(function(commands) {
   });
 });
 
-function commandToShortcut(commandName, callback) {
+function getCommands(callback) {
   chrome.commands.getAll(function(commands) {
+    callback(commands.filter(function(cmd) {
+      return (cmd.name != 'launch_options');
+    }));
+  });
+}
+
+function commandToShortcut(commandName, callback) {
+  getCommands(function(commands) {
     var notFound = commands.every(function(command) {
       if (command.name === commandName) {
         callback(command.shortcut);
@@ -50,7 +65,7 @@ function createTabsForBookmarkNodes(nodes) {
 window.getAllBookmarks = function(callback) {
   var commandToDescriptor = {}
 
-  chrome.commands.getAll(function(commands) {
+  getCommands(function(commands) {
     var completionCount = 0;
     function completeOneCommand() {
       completionCount++;
