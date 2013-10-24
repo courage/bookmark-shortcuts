@@ -1,0 +1,19 @@
+{
+  "name": "Launchafilter",
+  "description": "Launches bookmarks with keyboard shortcuts.",
+  "manifest_version": 2,
+  "version": "1.0.0",
+
+  "commands": {
+    "launch_bookmark_1": { "description": "launch bookmark 1", "suggested_key": { "default": "Alt+1" } },
+    "launch_bookmark_2": { "description": "launch bookmark 2", "suggested_key": { "default": "Alt+2" } },
+    "launch_bookmark_3": { "description": "launch bookmark 3", "suggested_key": { "default": "Alt+3" } },
+    "launch_bookmark_4": { "description": "launch bookmark 4", "suggested_key": { "default": "Alt+4" } }
+  },
+
+  "background": {
+    "scripts": ["eventpage.js"],
+    "persistent": false
+  }
+}
+  
