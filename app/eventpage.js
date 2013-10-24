@@ -77,7 +77,8 @@ window.getAllBookmarks = function(callback) {
       commandToDescriptor[command.name] = {};
       if (command.shortcut) {
         shortcutToBookmarkNodes(command.shortcut, function (nodes) {
-          commandToDescriptor[command.name][command.shortcut] = nodes;
+          commandToDescriptor[command.name].shortcut = command.shortcut;
+          commandToDescriptor[command.name].bookmarks = nodes;
           completeOneCommand();
         });
       } else {
