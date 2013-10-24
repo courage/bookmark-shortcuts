@@ -1,5 +1,5 @@
 {
-  "name": "Launchafilter",
+  "name": "Bookmark Shortcuts",
   "description": "Launches bookmarks with keyboard shortcuts.",
   "manifest_version": 2,
   "version": "1.0.0",
@@ -15,8 +15,7 @@
     "launch_bookmark_6": { "description": "launch bookmark 6" },
     "launch_bookmark_7": { "description": "launch bookmark 7" },
     "launch_options": {
-      "description": "open the Launchafilter options page",
-      "suggested_key": { "default": "Alt+0" }
+      "description": "open the Bookmark Shortcuts options page"
     }
   },
 
