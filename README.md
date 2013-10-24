@@ -10,5 +10,5 @@ multiple bookmarks have the tag, the shortcut key will open them all.
 
 ![bookmark manager screenshot](https://raw.github.com/courage/bookmark-shortcuts/master/screenshots/bookmark-manager.png)
 
-You can configure the shortcut keys on the [Chrome Extensions page](chrome://extensions).
+You can configure the shortcut keys on the Chrome Extensions page.
 ![settings screenshot](https://raw.github.com/courage/bookmark-shortcuts/master/screenshots/settings.png)
